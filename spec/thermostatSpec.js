@@ -53,4 +53,26 @@ describe("Thermostat", () => {
     test_thermostat.up();
     expect(test_thermostat.getCurrentTemperature()).toEqual(32);
   });
+
+  it("should return low usage when temp is 18", () => {
+    test_thermostat.down();
+    test_thermostat.down();
+    test_thermostat.down();
+
+    expect(test_thermostat.getCurrentUsage()).toEqual("low-usage")
+  });
+
+  it("should return medium usage when temp is 20", () => {
+
+    expect(test_thermostat.getCurrentUsage()).toEqual("medium-usage")
+  });
+
+  it("should return medium usage when temp is 20", () => {
+    test_thermostat.powerSaveOff();
+
+    for (let i = 0; i < 12; i++) {
+      test_thermostat.up();
+    }
+    expect(test_thermostat.getCurrentUsage()).toEqual("high-usage")
+  });
 });
