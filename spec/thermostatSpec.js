@@ -4,7 +4,7 @@ describe("Thermostat", () => {
   let test_thermostat;
   beforeEach(() => {
     test_thermostat = new Thermostat();
-  })
+  });
 
   it("starts at 20 degrees", () => {
     expect(test_thermostat.getCurrentTemperature()).toEqual(20);
@@ -21,8 +21,7 @@ describe("Thermostat", () => {
   });
 
   it("The temperature will not decrease below 10 degrees", () => {
-
-    for(let i = 0; i < 10; i++){
+    for (let i = 0; i < 10; i++) {
       test_thermostat.down();
     }
     expect(test_thermostat.getCurrentTemperature()).toEqual(10);
@@ -31,11 +30,21 @@ describe("Thermostat", () => {
   });
 
   it("Temperature should not go over 25 on power saving mode", () => {
-    for(let i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++) {
       test_thermostat.up();
     }
     expect(test_thermostat.getCurrentTemperature()).toEqual(25);
-    test_thermostat.up()
+    test_thermostat.up();
     expect(test_thermostat.getCurrentTemperature()).toEqual(25);
+  });
+
+  it("Max temp is 32 without power saving mode", () => {
+    test_thermostat.powerSaveOff();
+    for (let i = 0; i < 12; i++) {
+      test_thermostat.up();
+    }
+    expect(test_thermostat.getCurrentTemperature()).toEqual(32);
+    test_thermostat.up();
+    expect(test_thermostat.getCurrentTemperature()).toEqual(32);
   });
 });
