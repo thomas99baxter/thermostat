@@ -10,6 +10,12 @@ describe("Thermostat", () => {
     expect(test_thermostat.getCurrentTemperature()).toEqual(20);
   });
 
+  it("thermostat can be reset to 20 degrees", () => {
+    test_thermostat.up();
+    test_thermostat.resetTemperature();
+    expect(test_thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
   it("You can increase the temperature with an up function", () => {
     test_thermostat.up();
     expect(test_thermostat.getCurrentTemperature()).toEqual(21);
