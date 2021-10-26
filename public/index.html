@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../lib/thermostat.js"></script>
     <script src="../lib/interface.js"></script>
+    <script src="../lib/weatherApi.js"></script>
     <title>Thermostat</title>
   </head>
   <body>
+    <select id="city-selector" name="city">
+      <option>London</option>
+      <option>Paris</option>
+    </select>
+    <button id="city-select-button">Click me</button>
+
     <div>
       <p id="current-temperature"></p>
       <button id="increase-temperature">Up</button>
@@ -17,7 +24,11 @@
     <div id="power-saving-mode">
       <p id="power-saving-mode-status"></p>
       <button id="power-saving-toggle">Toggle power saving mode</button>
-
+      <br />
+      <br />
+      <br />
+      <span id="city-name">Current Temperature in blank:</span>
+      <span id="weather"></span>
     </div>
   </body>
 </html>
