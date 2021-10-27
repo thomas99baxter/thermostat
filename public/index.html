@@ -16,17 +16,9 @@
       <option>Paris</option>
     </select>
     <button id="city-select-button">Click me</button>
-
-    <div>
-      <button id="increase-temperature">Up</button>
-      <button id="decrease-temperature">Down</button>
-    </div>
     <div id="power-saving-mode">
       <p id="power-saving-mode-status"></p>
-      <button id="power-saving-toggle">Toggle power saving mode</button>
-      <br />
-      <br />
-      <br />
+      
       <span id="city-name">Current Temperature in blank:</span>
       <span id="weather"></span>
     </div>
@@ -42,8 +34,13 @@
           <p>10</p>
           <p class="zero">0</p>
         </div>
-        <div id="thermostat-bar" class="thermostat-bar"></div>
-      
+        <div id="thermostat-bar" class="thermostat-bar"></div></div>
+      <div class="thermostat-controls">
+        <div>
+          <button class="increase-temperature" id="increase-temperature">Up</button>
+          <button class="decrease-temperature" id="decrease-temperature">Down</button> <br />
+          <button class="power-saving-toggle" id="power-saving-toggle">Toggle PSM</button> 
+        </div>
       </div>
     </div>
   </body>

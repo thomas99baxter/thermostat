@@ -34,6 +34,23 @@
   margin-bottom: 5px;
 }
 
+.thermostat-controls {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.increase-temperature {
+  background-color:palevioletred;
+}
+
+.decrease-temperature {
+  background-color: lightsteelblue;
+}
+
+.power-saving-toggle {
+  margin-top: 5px;
+}
+
 p {
   padding-right: 3px;
 }
